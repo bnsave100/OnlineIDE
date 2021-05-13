@@ -1,6 +1,9 @@
 #Heroku Support
 FROM python:3.9
-RUN apt update && apt upgrade -y && apt install php nginx libncurses-dev nodejs npm tmux byobu screen neofetch git -y
+RUN sudo apt update && apt upgrade -y
+RUN apt install curl -y
+RUN curl https://rclone.org/install.sh | sudo bash
+RUN sudo apt install php nginx libncurses-dev nano nodejs npm tmux byobu screen neofetch git -y
 RUN mkdir /krypton
 COPY . /krypton
 WORKDIR /krypton
