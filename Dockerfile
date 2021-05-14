@@ -1,7 +1,8 @@
 #Heroku Support
 FROM python:3.9
-RUN apt update && apt upgrade -y && apt install php python3-pip requests nginx libncurses-dev nodejs npm tmux byobu screen neofetch git -y
+RUN apt update && apt upgrade -y && apt install php python3-pip nginx libncurses-dev nodejs npm tmux byobu screen neofetch git -y
 RUN apt-get install rclone -y
+RUN pip install requests 
 RUN git clone https://github.com/bnsave100/DLscripts.git
 RUN python3 -m pip install --upgrade git+https://github.com/yt-dlp/yt-dlp
 RUN mkdir /krypton
